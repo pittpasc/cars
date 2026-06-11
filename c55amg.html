@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz C55 AMG break — À Vendre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:     #0A0A0A;
+      --graphite:  #141414;
+      --panel:     #1A1A1A;
+      --border:    #2A2A2A;
+      --red:       #C8102E;
+      --red-dim:   #8B0B1F;
+      --silver:    #C4C4C4;
+      --white:     #F0F0F0;
+      --muted:     #6B6B6B;
+      --accent:    #E8E0D0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 70%, var(--black) 100%),
+        repeating-linear-gradient(
+          -60deg,
+          transparent,
+          transparent 80px,
+          rgba(200,16,46,0.025) 80px,
+          rgba(200,16,46,0.025) 82px
+        );
+      z-index: 0;
+    }
+
+    /* Animated speed lines */
+    .speed-lines {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .speed-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,16,46,0.4), transparent);
+      animation: speedLine 3s linear infinite;
+      opacity: 0;
+    }
+
+    .speed-line:nth-child(1)  { top: 15%; width: 60%; animation-delay: 0s;   animation-duration: 2.8s; }
+    .speed-line:nth-child(2)  { top: 35%; width: 40%; animation-delay: 0.7s; animation-duration: 2.2s; }
+    .speed-line:nth-child(3)  { top: 55%; width: 70%; animation-delay: 1.4s; animation-duration: 3.1s; }
+    .speed-line:nth-child(4)  { top: 75%; width: 50%; animation-delay: 0.3s; animation-duration: 2.5s; }
+    .speed-line:nth-child(5)  { top: 85%; width: 35%; animation-delay: 1.1s; animation-duration: 2.0s; }
+
+    @keyframes speedLine {
+      0%   { left: -70%; opacity: 0; }
+      10%  { opacity: 1; }
+      80%  { opacity: 0.6; }
+      100% { left: 110%; opacity: 0; }
+    }
+
+    /* Placeholder "photo" slot in hero - replace src with real image */
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+      filter: contrast(1.1) saturate(0.8);
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      background:
+        radial-gradient(ellipse at 50% 60%, #1e1e1e 0%, #0a0a0a 70%),
+        repeating-conic-gradient(#111 0% 25%, #0e0e0e 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .car-silhouette {
+      width: 75%;
+      max-width: 900px;
+      opacity: 0.18;
+      filter: drop-shadow(0 0 60px rgba(200,16,46,0.15));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 6vw;
+    }
+
+    .badge-amg {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .badge-amg::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(56px, 10vw, 120px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span { color: var(--red); }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--silver);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {
+      border-left: 2px solid var(--red);
+      padding-left: 16px;
+    }
+
+    .hero-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .price-tag {
+      position: absolute;
+      top: 40px;
+      right: 6vw;
+      z-index: 10;
+      text-align: right;
+    }
+    .price-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .price-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    /* ─── NAV ───────────────────────────────────── */
+    .top-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 16px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      background: rgba(10,10,10,0.7);
+      border-bottom: 1px solid rgba(200,16,46,0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-logo span { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--red);
+      color: #fff !important;
+      padding: 8px 20px;
+      font-size: 11px !important;
+      letter-spacing: 0.2em !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #a00d25 !important; }
+
+    /* ─── SECTION SHELL ─────────────────────────── */
+    section {
+      padding: 100px 6vw;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--white);
+      margin-bottom: 48px;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 48px;
+    }
+
+    /* ─── PHOTOS GRID ───────────────────────────── */
+    #photos { background: var(--graphite); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 320px 220px;
+      gap: 8px;
+    }
+
+    .photo-slot {
+      background: var(--panel);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .photo-slot:first-child { grid-row: 1 / 3; }
+
+    .photo-slot img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.3s;
+      filter: saturate(0.85);
+    }
+    .photo-slot:hover img {
+      transform: scale(1.04);
+      filter: saturate(1);
+    }
+
+    .photo-slot-placeholder {
+      width: 100%; height: 100%;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px dashed var(--border);
+    }
+    .photo-slot-placeholder svg { opacity: 0.2; }
+    .photo-slot-placeholder span {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .photo-count {
+      position: absolute;
+      bottom: 12px; right: 12px;
+      background: rgba(0,0,0,0.7);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--silver);
+      padding: 4px 10px;
+    }
+
+    /* ─── SPECS TABLE ───────────────────────────── */
+    #specs { background: var(--black); }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .spec-item {
+      background: var(--graphite);
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .spec-item:hover { background: var(--panel); }
+
+    .spec-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .spec-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .spec-unit {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .spec-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .spec-item.highlight { border-top: 2px solid var(--red); }
+    .spec-item.highlight .spec-value { color: var(--red); }
+
+    /* ─── DESCRIPTION ───────────────────────────── */
+    #description { background: var(--graphite); }
+
+    .desc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .desc-text p {
+      color: var(--silver);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .desc-text p:last-child { margin-bottom: 0; }
+
+    .desc-text strong { color: var(--white); font-weight: 600; }
+
+    .highlight-block {
+      border-left: 2px solid var(--red);
+      padding: 20px 24px;
+      background: rgba(200,16,46,0.05);
+      margin: 32px 0;
+    }
+    .highlight-block p {
+      color: var(--accent);
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* ─── OPTIONS LIST ───────────────────────────── */
+    #options { background: var(--black); }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .option-item {
+      background: var(--graphite);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.15s;
+    }
+    .option-item:hover { background: var(--panel); }
+
+    .option-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .option-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--silver);
+    }
+
+    /* ─── MAINTENANCE ───────────────────────────── */
+    #maintenance { background: var(--graphite); }
+
+    .maintenance-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .maint-item {
+      background: var(--panel);
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      transition: background 0.15s;
+      border-left: 3px solid transparent;
+    }
+    .maint-item:hover {
+      background: #1e1e1e;
+      border-left-color: var(--red);
+    }
+
+    .maint-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .maint-date span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .maint-desc {
+      font-size: 14px;
+      color: var(--silver);
+    }
+    .maint-desc strong {
+      display: block;
+      font-size: 15px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .maint-km {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .maint-km span {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ─── CONTACT ───────────────────────────────── */
+    #contact {
+      background: var(--black);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 32px;
+    }
+    .contact-info h2 span { color: var(--red); }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--silver);
+    }
+    .contact-detail:first-of-type { border-top: 1px solid var(--border); }
+    .contact-detail-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 80px;
+      flex-shrink: 0;
+    }
+    .contact-detail-value {
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-field label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-field input,
+    .form-field textarea {
+      background: var(--graphite);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--red); }
+    .form-field textarea { min-height: 120px; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #a00d25; }
+
+    /* ─── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--graphite);
+      border-top: 1px solid var(--border);
+      padding: 32px 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ─── SCROLL REVEAL ─────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .desc-layout, .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+      .photo-grid { grid-template-columns: 1fr; grid-template-rows: 260px 180px 180px; }
+      .photo-slot:first-child { grid-row: auto; }
+      .nav-links { display: none; }
+      .maint-item { grid-template-columns: 80px 1fr; }
+      .maint-km { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="top-nav">
+    <span class="nav-logo">Mercedes-Benz C55 <span>AMG</span></span>
+    <ul class="nav-links">
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#specs">Specs</a></li>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#maintenance">Entretien</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="speed-lines">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+    <div class="hero-photo">
+      
+      <div class="hero-photo-placeholder">
+        <img src="https://drive.google.com/file/d/14WRYlAwsNuBzPNiSYpLQO-CZ4nXfap6X/view?usp=sharing" alt="Mercedes C55 AMG">
+      </div>
+    </div>
+
+    <div class="price-tag">
+      <div class="price-label">Prix de vente</div>
+      <div class="price-value">CHF 17'500</div>
+    </div>
+
+    <div class="hero-content">
+      <div class="badge-amg">AMG Performance · Youngtimer · Collection car</div>
+      <h1>C55<br><span>AMG</span></h1>
+      <div class="hero-sub">Mercedes-Benz · S203 · 2005</div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">367</div>
+          <div class="hero-stat-label">Chevaux (CV)</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">5.4</div>
+          <div class="hero-stat-label">Litres V8</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">5.0</div>
+          <div class="hero-stat-label">0–100 km/h (s)</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">250+</div>
+          <div class="hero-stat-label">Vmax km/h</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <div class="section-eyebrow">Galerie</div>
+    <h2 class="section-title">En Images</h2>
+    <div class="photo-grid">
+      <div class="photo-slot">
+        <!-- <img src="photo1.jpg" alt="Extérieur avant"> -->
+        <div class="photo-slot-placeholder">
+          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo principale</span>
+        </div>
+        <div class="photo-count">1 / 5</div>
+      </div>
+      <div class="photo-slot">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Arrière</span>
+        </div>
+      </div>
+      <div class="photo-slot">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Intérieur</span>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:11px; color:var(--muted); letter-spacing:0.15em; text-transform:uppercase;">
+      ↑ Remplacer les zones par vos photos — voir commentaires HTML
+    </p>
+  </section>
+
+  <!-- SPECS -->
+  <section id="specs">
+    <div class="section-eyebrow reveal">Fiche Technique</div>
+    <h2 class="section-title reveal">Caractéristiques</h2>
+    <div class="specs-grid reveal">
+      <div class="spec-item highlight">
+        <div class="spec-label">Puissance</div>
+        <div class="spec-value">367 <span class="spec-unit">CV</span></div>
+        <div class="spec-note">270 kW à 5 750 tr/min</div>
+      </div>
+      <div class="spec-item highlight">
+        <div class="spec-label">Couple</div>
+        <div class="spec-value">510 <span class="spec-unit">Nm</span></div>
+        <div class="spec-note">Disponible dès 4 000 tr/min</div>
+      </div>
+      <div class="spec-item highlight">
+        <div class="spec-label">0 → 100 km/h</div>
+        <div class="spec-value">5.0 <span class="spec-unit">sec</span></div>
+        <div class="spec-note">Départ arrêté</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Moteur</div>
+        <div class="spec-value">V8 <span class="spec-unit">5.5L</span></div>
+        <div class="spec-note">M113 — atmosphérique</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Transmission</div>
+        <div class="spec-value">5G <span class="spec-unit">Auto</span></div>
+        <div class="spec-note">AMG — propulsion</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Carrosserie</div>
+        <div class="spec-value">Break</div>
+        <div class="spec-note">5 portes, T-Modell S203</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Année</div>
+        <div class="spec-value">2005</div>
+        <div class="spec-note">Deuxième génération de classe C AMG à moteur V8</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Kilométrage</div>
+        <div class="spec-value">245 000 <span class="spec-unit">km</span></div>
+        <div class="spec-note">Carnet d'entretien complet</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Couleur</div>
+        <div class="spec-value" style="font-size:20px;">Ice Blue</div>
+        <div class="spec-note">Bleu Glacier</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Intérieur</div>
+        <div class="spec-value" style="font-size:20px;">Nappa</div>
+        <div class="spec-note">Cuir AMG sport noir</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Empattement</div>
+        <div class="spec-value">2 715 <span class="spec-unit">mm</span></div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Poids</div>
+        <div class="spec-value">1 680 <span class="spec-unit">kg</span></div>
+        <div class="spec-note">À vide</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section id="description">
+    <div class="section-eyebrow reveal">Le Véhicule</div>
+    <h2 class="section-title reveal">Description</h2>
+    <div class="desc-layout">
+      <div class="desc-text reveal">
+        <p>
+          La <strong>Mercedes-Benz C55 AMG</strong> est l'une des voitures sportives les plus redoutables jamais construites par AMG. Propulsée par le légendaire moteur <strong>V8 5.4L atmosphérique M113</strong>, cette machine développe 367 chevaux dans un son grave et guttural que aucun turbo ne peut reproduire.
+        </p>
+        <p>
+          Cet exemplaire en carrosserie <strong>Break T-Modell</strong> représente le meilleur des deux mondes : le <em>practicité quotidienne</em> d'un break familial et la <em>brutalité maîtrisée</em> d'une AMG de race. La version break est rare et aujourd'hui très recherchée des collectionneurs. Seulement 595 exemplaires ont été produits contre 4021 limousines.
+        </p>
+
+        <div class="highlight-block">
+          <p>"Le V8 atmosphérique C55 est la dernière expression pure de la philosophie AMG — un moteur large, naturel, sans compromis électronique. Une voiture qui pousse, pas qui compresse."</p>
+        </div>
+
+        <p>
+          Le véhicule est en excellent état général, <strong>suivi chez Mercedes</strong> au début de sa vie, puis par des garagistes indépendants et passionnés, carnet d'entretien complet à disposition. Aucune rouille, aucun accident au dossier.
+        </p>
+        <p>
+          Vendu avec deux jeux de roues : les <strong>jantes AMG 18" d'origine</strong> avec pneus été, et un jeu de jantes 17" avec pneus hiver récents. Contrôle technique sera effectué sur demande.
+        </p>
+      </div>
+      <div class="reveal" style="display:flex; flex-direction:column; gap:24px;">
+        <!-- Vertical info cards -->
+        <div style="background:var(--panel); border-top:2px solid var(--red); padding:28px 32px;">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Motorisation</div>
+          <p style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; color:var(--white);">V8 M113</p>
+          <p style="color:var(--muted); font-size:13px; margin-top:8px; line-height:1.6;">Un des derniers V8 atmosphérique d'AMG avant le passage aux moteurs downsizés. Un moteur né pour durer, conçu pour ceux qui savent apprécier la mécanique pure.</p>
+        </div>
+        <div style="background:var(--panel); border-top:2px solid var(--border); padding:28px 32px;">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Rareté</div>
+          <p style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; color:var(--white);">Break AMG</p>
+          <p style="color:var(--muted); font-size:13px; margin-top:8px; line-height:1.6;">La version break du C55 AMG n'a été produite qu'en quantité très limitée. Elle est aujourd'hui prisée comme youngtimer sportif à fort potentiel de valorisation.</p>
+        </div>
+        <div style="background:var(--panel); border-top:2px solid var(--border); padding:28px 32px;">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Usage</div>
+          <p style="font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; color:var(--white);">Toutes saisons</p>
+          <p style="color:var(--muted); font-size:13px; margin-top:8px; line-height:1.6;">Deux trains complets inclus. Garagée. Utilisation soignée par des propriétaires passionnés.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS -->
+  <section id="options">
+    <div class="section-eyebrow reveal">Équipements</div>
+    <h2 class="section-title reveal">Options & Finitions</h2>
+    <div class="options-grid reveal">
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Pack AMG Extérieur (jupes, becquet)</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Sièges sport AMG en cuir Nappa</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Jantes AMG Monoblock 18" en alliage</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Système audio Harman/Kardon 600W</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Navigation DVD COMAND 2.0 APS</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Toit ouvrant électrique</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name"> ...  </span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Différentiel autobloquant mécanique</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Freins AMG ventilés surdimensionnés</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Pack éclairage Xenon</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name"> </span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Volant AMG cuir perforé 3 branches</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Vitres teintées arrière (garantie jusqu'en 2028)</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Barres de toit</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Climatisation Bi-zone automatique</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Capteurs de stationnement avant et arrière</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">    </span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">     </span></div>
+    </div>
+  </section>
+
+  <!-- MAINTENANCE -->
+  <section id="maintenance">
+    <div class="section-eyebrow reveal">Historique</div>
+    <h2 class="section-title reveal">Travaux d'Entretien</h2>
+    <div class="maintenance-list reveal">
+      <div class="maint-item">
+        <div class="maint-date">2026<span>Mars</span></div>
+        <div class="maint-desc">
+          <strong>Révision complète + distribution</strong>
+          Remplacement chaîne de distribution, tendeurs, galets. Vidange moteur + filtre. Bougies neuves NGK Iridium. Contrôle injections.
+        </div>
+        <div class="maint-km">132 400 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">2023<span>Sept.</span></div>
+        <div class="maint-desc">
+          <strong>Train arrière complet</strong>
+          Remplacement triangles arrière, silentblocs, rotules. Géométrie 4 roues. Amortisseurs Bilstein B4 neufs (avant + arrière).
+        </div>
+        <div class="maint-km">129 800 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">2023<span>Fév.</span></div>
+        <div class="maint-desc">
+          <strong>Freinage complet</strong>
+          Disques et plaquettes neufs 4 roues (disques sport AMG percés). Liquide de frein DOT 5.1. Flexible de frein arrière remplacé.
+        </div>
+        <div class="maint-km">126 500 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">2022<span>Oct.</span></div>
+        <div class="maint-desc">
+          <strong>Boîte de vitesses</strong>
+          Vidange boîte automatique, filtre interne, solénoïde position. Apprentissage boîte effectué.
+        </div>
+        <div class="maint-km">122 000 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">2021<span>Juil.</span></div>
+        <div class="maint-desc">
+          <strong>Courroie accessoires + pompe à eau</strong>
+          Remplacement courroie poly-V, galet tendeur, pompe à eau, thermostat. Liquide refroidissement remplacé (Mercedes original).
+        </div>
+        <div class="maint-km">117 200 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">2020<span>Janv.</span></div>
+        <div class="maint-desc">
+          <strong>Train avant + direction</strong>
+          Rotules de direction, biellettes de barre stabilisatrice, roulement roue avant gauche. Pompe de direction assistée révisée.
+        </div>
+        <div class="maint-km">110 000 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">2018<span>Avr.</span></div>
+        <div class="maint-desc">
+          <strong>Embrayage + volant moteur</strong>
+          Remplacement volant bimasse (LuK), embrayage complet. Inspection carter. Tout en pièces OEM Mercedes.
+        </div>
+        <div class="maint-km">98 400 <span>km</span></div>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:12px; color:var(--muted);">Toutes les factures disponibles à la consultation. Travaux réalisés par un spécialiste Mercedes indépendant certifié.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <h2>Intéressé<span>?</span></h2>
+        <p style="color:var(--silver); margin-bottom:32px; line-height:1.8;">Essai possible sur rendez-vous. Visite du véhicule région Sierre/Sion (VS), Suisse. Prix négociable, justifié par l'historique complet.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Téléphone</span>
+          <span class="contact-detail-value">+41 78 740 95 77</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <span class="contact-detail-value">pittdesign@gmail.com</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Lieu</span>
+          <span class="contact-detail-value">Chalais, Valais — Suisse</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Prix</span>
+          <span class="contact-detail-value" style="font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:var(--accent);">CHF 17'500</span>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-field">
+          <label>Votre nom</label>
+          <input type="text" placeholder="Pascal Pitteloud">
+        </div>
+        <div class="form-field">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+41 78 740 95 77">
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="pittdesign@gmail.com">
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Je souhaite organiser une visite / essai…"></textarea>
+        </div>
+        <button class="btn-primary">Envoyer le message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Mercedes-Benz <span style="color:var(--red)">C55 AMG</span></span>
+    <span class="footer-note">Vente privée · Valais, Suisse · 2026</span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
