@@ -381,9 +381,15 @@
 
     .photo-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: 320px 220px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
       gap: 8px;
+    }
+
+    /* First photo is the hero shot — bigger */
+    .photo-grid .photo-slot:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
     }
 
     .photo-slot {
@@ -391,10 +397,6 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
-    }
-
-    .photo-slot:first-child {
-      grid-row: 1 / 3;
     }
 
     .photo-slot img {
@@ -820,12 +822,13 @@
       }
 
       .photo-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: 260px 180px 180px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
       }
 
-      .photo-slot:first-child {
-        grid-row: auto;
+      .photo-grid .photo-slot:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
       }
 
       .nav-links {
@@ -839,10 +842,6 @@
       .maint-km {
         display: none;
       }
-    }
-
-    <style>.photo-slot {
-      cursor: pointer;
     }
 
     .photo-slot img {
@@ -975,29 +974,60 @@
   <section id="photos">
     <div class="section-eyebrow">Galerie</div>
     <h2 class="section-title reveal">En Images</h2>
-    <div class="photo-grid">
-      <div class="photo-slot">
-        <div class="photo-grid reveal">
+    <div class="photo-grid reveal">
 
-          <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-04.jpg">
-            <img src="https://pittpasc.github.io/cars/photos/C55-04.jpg" alt="Mercedes C55 AMG - photo 1">
-            <span class="photo-count">1 / 5</span>
-          </div>
-
-          <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-01.jpg">
-            <img src="https://pittpasc.github.io/cars/photos/C55-01.jpg" alt="Mercedes C55 AMG - photo 2">
-            <span class="photo-count">2 / 5
-          </div>
-
-
-          <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-03.jpg">
-            <img src="https://pittpasc.github.io/cars/photos/C55-03.jpg" alt="Mercedes C55 AMG - photo 3">
-            <span class="photo-count">3 / 5
-          </div>
-
-        </div>
-
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-04.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-04.jpg" alt="Mercedes C55 AMG - photo 1">
+        <span class="photo-count">1 / 10</span>
       </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-01.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-01.jpg" alt="Mercedes C55 AMG - photo 2">
+        <span class="photo-count">2 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-03.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-03.jpg" alt="Mercedes C55 AMG - photo 3">
+        <span class="photo-count">3 / 10</span>
+      </div>
+
+      <!-- Ajoutez vos photos supplémentaires en copiant un bloc ci-dessous
+           et en remplaçant l'URL par le chemin de votre image -->
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-02.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-02.jpg" alt="Mercedes C55 AMG - photo 4">
+        <span class="photo-count">4 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-05.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-05.jpg" alt="Mercedes C55 AMG - photo 5">
+        <span class="photo-count">5 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-06.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-06.jpg" alt="Mercedes C55 AMG - photo 6">
+        <span class="photo-count">6 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-07.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-07.jpg" alt="Mercedes C55 AMG - photo 7">
+        <span class="photo-count">7 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-08.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-08.jpg" alt="Mercedes C55 AMG - photo 8">
+        <span class="photo-count">8 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-09.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-09.jpg" alt="Mercedes C55 AMG - photo 9">
+        <span class="photo-count">9 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-10.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-10.jpg" alt="Mercedes C55 AMG - photo 10">
+        <span class="photo-count">10 / 10</span>
+      </div>
+
     </div>
   </section>
 
