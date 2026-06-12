@@ -905,24 +905,7 @@
     }
   </style>
   </style>
-  <script>
-  function initObfuscatedMailto(linkId) {
-    const link = document.getElementById(linkId);
-    if (!link) return;
-
-    const encoded = link.dataset.email;
-    if (!encoded) return;
-
-    const email = atob(encoded);
-
-    link.href = "mailto:" + email;
-    link.addEventListener("click", function () {
-      link.href = "mailto:" + email;
-    });
-  }
-
-  initObfuscatedMailto("contact-email");
-</script>
+  
 </head>
 
 <body>
@@ -1413,7 +1396,11 @@
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
           <span class="contact-detail-value">
-            <a href="#" id="contact-email" data-email="cGl0dHBhc2NAZ21haWwuY29t==">...</a>
+            <script>
+var eDone = 'pittpasc'+'@'+'gmail'+'.'+'com';
+var eSubject = 'Contact C55 AMG'; 
+document.write('<a '+'hre'+'f="mai'+'lto:'+eDone+'?sub'+'ject='+eSubject+'">'+eDone+'</'+'a>');
+</script>
           </span>
         </div>
         <div class="contact-detail">
