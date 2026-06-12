@@ -905,6 +905,24 @@
     }
   </style>
   </style>
+  <script>
+  function initObfuscatedMailto(linkId) {
+    const link = document.getElementById(linkId);
+    if (!link) return;
+
+    const encoded = link.dataset.email;
+    if (!encoded) return;
+
+    const email = atob(encoded);
+
+    link.href = "mailto:" + email;
+    link.addEventListener("click", function () {
+      link.href = "mailto:" + email;
+    });
+  }
+
+  initObfuscatedMailto("contact-email");
+</script>
 </head>
 
 <body>
@@ -1026,6 +1044,35 @@
       <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-10.jpg">
         <img src="https://pittpasc.github.io/cars/photos/C55-10.jpg" alt="Mercedes C55 AMG - photo 10">
         <span class="photo-count">10 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-11.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-11.jpg" alt="Mercedes C55 AMG - photo 11">
+        <span class="photo-count">11 / 17</span>
+      </div>
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-12.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-12.jpg" alt="Mercedes C55 AMG - photo 12">
+        <span class="photo-count">12 / 17</span>
+      </div>
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-13.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-13.jpg" alt="Mercedes C55 AMG - photo 13">
+        <span class="photo-count">13 / 17</span>
+      </div>
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-14.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-14.jpg" alt="Mercedes C55 AMG - photo 14">
+        <span class="photo-count">14 / 17</span>
+      </div>
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-15.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-15.jpg" alt="Mercedes C55 AMG - photo 15">
+        <span class="photo-count">15 / 17</span>
+      </div>
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-16.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-16.jpg" alt="Mercedes C55 AMG - photo 16">
+        <span class="photo-count">16 / 17</span>
+      </div>
+      <div class="photo-slot" data-full="https://pittpasc.github.io/cars/photos/C55-17.jpg">
+        <img src="https://pittpasc.github.io/cars/photos/C55-17.jpg" alt="Mercedes C55 AMG - photo 17">
+        <span class="photo-count">17 / 17</span>
       </div>
 
     </div>
@@ -1342,7 +1389,7 @@
       <div class="contact-info reveal">
         <h2>Intéressé<span>?</span></h2>
         <p style="color:var(--silver); margin-bottom:32px; line-height:1.8;">Essai possible sur rendez-vous. Visite du
-          véhicule région Sierre/Sion (VS), Suisse. Prix négociable, justifié par l'historique complet.</p>
+          véhicule région Sierre/Sion (VS), Suisse. Prix négociable dans une mesure raisonnable.</p>
         <div class="contact-detail">
           <span class="contact-detail-label">Téléphone</span>
           <span class="contact-detail-value">+41 78 740 95 77</span>
@@ -1389,24 +1436,7 @@
 </div>
 
 </html>
-<script>
-  function initObfuscatedMailto(linkId) {
-    const link = document.getElementById(linkId);
-    if (!link) return;
 
-    const encoded = link.dataset.email;
-    if (!encoded) return;
-
-    const email = atob(encoded);
-
-    link.href = "mailto:" + email;
-    link.addEventListener("click", function () {
-      link.href = "mailto:" + email;
-    });
-  }
-
-  initObfuscatedMailto("contact-email");
-</script>
 <script>
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('imageModalImg');
