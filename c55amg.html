@@ -1349,18 +1349,14 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <span class="contact-detail-value">@gmail.com</span>
+          <span class="contact-detail-value">
+            <a href="#" id="contact-email" data-email="aW5mb0BleGFtcGxlLmNvbQ==">Me contacter par email</a>
+          </span>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Lieu</span>
           <span class="contact-detail-value">Valais central — Suisse</span>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-label">Prix</span>
-          <span class="contact-detail-value"
-            style="font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:var(--accent);">CHF
-            17'500</span>
-        </div>
+        </div>        
       </div>
     </div>
   </section>
@@ -1393,6 +1389,24 @@
 </div>
 
 </html>
+<script>
+  function initObfuscatedMailto(linkId) {
+    const link = document.getElementById(linkId);
+    if (!link) return;
+
+    const encoded = link.dataset.email;
+    if (!encoded) return;
+
+    const email = atob(encoded);
+
+    link.href = "mailto:" + email;
+    link.addEventListener("click", function () {
+      link.href = "mailto:" + email;
+    });
+  }
+
+  initObfuscatedMailto("contact-email");
+</script>
 <script>
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('imageModalImg');
