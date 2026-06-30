@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range Rover Sport V8 Autobiography — À Vendre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:     #0B0E12;
+      --graphite:  #141A20;
+      --panel:     #1A2128;
+      --border:    #2A333C;
+      --blue:      #1E4D6B;
+      --blue-dim:  #15384E;
+      --bronze:    #B8895A;
+      --bronze-dim:#8C6640;
+      --caramel:   #C8895C;
+      --silver:    #C4C9CD;
+      --white:     #F2F0EC;
+      --muted:     #6E767E;
+      --accent:    #D9C3A3;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(11,14,18,0.2) 0%, rgba(11,14,18,0.88) 70%, var(--black) 100%),
+        repeating-linear-gradient(
+          -60deg,
+          transparent,
+          transparent 80px,
+          rgba(184,137,90,0.025) 80px,
+          rgba(184,137,90,0.025) 82px
+        );
+      z-index: 0;
+    }
+
+    .speed-lines {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .speed-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(184,137,90,0.4), transparent);
+      animation: speedLine 3s linear infinite;
+      opacity: 0;
+    }
+
+    .speed-line:nth-child(1)  { top: 15%; width: 60%; animation-delay: 0s;   animation-duration: 2.8s; }
+    .speed-line:nth-child(2)  { top: 35%; width: 40%; animation-delay: 0.7s; animation-duration: 2.2s; }
+    .speed-line:nth-child(3)  { top: 55%; width: 70%; animation-delay: 1.4s; animation-duration: 3.1s; }
+    .speed-line:nth-child(4)  { top: 75%; width: 50%; animation-delay: 0.3s; animation-duration: 2.5s; }
+    .speed-line:nth-child(5)  { top: 85%; width: 35%; animation-delay: 1.1s; animation-duration: 2.0s; }
+
+    @keyframes speedLine {
+      0%   { left: -70%; opacity: 0; }
+      10%  { opacity: 1; }
+      80%  { opacity: 0.6; }
+      100% { left: 110%; opacity: 0; }
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+      filter: contrast(1.1) saturate(0.9);
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      background:
+        radial-gradient(ellipse at 50% 60%, #1c2630 0%, #0b0e12 70%),
+        repeating-conic-gradient(#161d24 0% 25%, #131920 0% 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .car-silhouette {
+      width: 75%;
+      max-width: 900px;
+      opacity: 0.18;
+      filter: drop-shadow(0 0 60px rgba(184,137,90,0.15));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 6vw;
+    }
+
+    .badge-amg {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bronze);
+      color: #1A1208;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .badge-amg::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      background: #1A1208;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(46px, 8vw, 100px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span { color: var(--bronze); }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(16px, 2.6vw, 24px);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--silver);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {
+      border-left: 2px solid var(--bronze);
+      padding-left: 16px;
+    }
+
+    .hero-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-top: 4px;
+    }
+
+    .price-tag {
+      position: absolute;
+      top: 40px;
+      right: 6vw;
+      z-index: 10;
+      text-align: right;
+    }
+    .price-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .price-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    /* ─── NAV ───────────────────────────────────── */
+    .top-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 16px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      background: rgba(11,14,18,0.7);
+      border-bottom: 1px solid rgba(184,137,90,0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-logo span { color: var(--bronze); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--bronze);
+      color: #1A1208 !important;
+      padding: 8px 20px;
+      font-size: 11px !important;
+      letter-spacing: 0.2em !important;
+      transition: background 0.2s !important;
+      font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: #cf9a68 !important; }
+
+    /* ─── SECTION SHELL ─────────────────────────── */
+    section { padding: 100px 6vw; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(34px, 4.5vw, 56px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--white);
+      margin-bottom: 48px;
+    }
+
+    /* ─── PHOTOS GRID ───────────────────────────── */
+    #photos { background: var(--graphite); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 8px;
+    }
+    .photo-grid .photo-slot:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .photo-slot {
+      background: var(--panel);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .photo-slot img {
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.3s;
+      filter: saturate(0.9);
+    }
+    .photo-slot:hover img {
+      transform: scale(1.04);
+      filter: saturate(1);
+    }
+    .photo-slot-placeholder {
+      width: 100%; height: 100%;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px dashed var(--border);
+    }
+    .photo-slot-placeholder svg { opacity: 0.2; }
+    .photo-slot-placeholder span {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .photo-count {
+      position: absolute;
+      bottom: 12px; right: 12px;
+      background: rgba(0,0,0,0.7);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--silver);
+      padding: 4px 10px;
+    }
+
+    /* ─── SPECS TABLE ───────────────────────────── */
+    #specs { background: var(--black); }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .spec-item {
+      background: var(--graphite);
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .spec-item:hover { background: var(--panel); }
+
+    .spec-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .spec-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .spec-unit { font-size: 13px; font-weight: 400; color: var(--muted); }
+    .spec-note { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .spec-item.highlight { border-top: 2px solid var(--bronze); }
+    .spec-item.highlight .spec-value { color: var(--bronze); }
+
+    /* ─── DESCRIPTION ───────────────────────────── */
+    #description { background: var(--graphite); }
+
+    .desc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .desc-text p { color: var(--silver); line-height: 1.8; margin-bottom: 20px; }
+    .desc-text p:last-child { margin-bottom: 0; }
+    .desc-text strong { color: var(--white); font-weight: 600; }
+
+    .highlight-block {
+      border-left: 2px solid var(--bronze);
+      padding: 20px 24px;
+      background: rgba(184,137,90,0.06);
+      margin: 32px 0;
+    }
+    .highlight-block p { color: var(--accent); font-style: italic; margin: 0; }
+
+    .info-card {
+      background: var(--panel);
+      border-top: 2px solid var(--bronze);
+      padding: 28px 32px;
+    }
+    .info-card.dim { border-top: 2px solid var(--border); }
+    .info-card-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; color: var(--white); }
+    .info-card-text { color: var(--muted); font-size: 13px; margin-top: 8px; line-height: 1.6; }
+
+    /* ─── OPTIONS LIST ───────────────────────────── */
+    #options { background: var(--black); }
+
+    .options-subtitle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--bronze);
+      margin: 56px 0 20px;
+    }
+    .options-subtitle:first-of-type { margin-top: 0; }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .option-item {
+      background: var(--graphite);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.15s;
+    }
+    .option-item:hover { background: var(--panel); }
+
+    .option-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--bronze);
+      flex-shrink: 0;
+    }
+    .option-name { font-size: 14px; font-weight: 500; color: var(--silver); }
+
+    /* ─── MAINTENANCE ───────────────────────────── */
+    #maintenance { background: var(--graphite); }
+
+    .maintenance-list { display: flex; flex-direction: column; gap: 1px; }
+
+    .maint-item {
+      background: var(--panel);
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      transition: background 0.15s;
+      border-left: 3px solid transparent;
+    }
+    .maint-item:hover {
+      background: #1e262e;
+      border-left-color: var(--bronze);
+    }
+
+    .maint-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .maint-date span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .maint-desc { font-size: 14px; color: var(--silver); }
+    .maint-desc strong { display: block; font-size: 15px; color: var(--white); margin-bottom: 4px; }
+
+    .maint-km {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .maint-km span { display: block; font-size: 10px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; }
+
+    /* ─── CONTACT ───────────────────────────────── */
+    #contact { background: var(--black); border-top: 1px solid var(--border); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 32px;
+    }
+    .contact-info h2 span { color: var(--bronze); }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--silver);
+    }
+    .contact-detail:first-of-type { border-top: 1px solid var(--border); }
+    .contact-detail-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 80px;
+      flex-shrink: 0;
+    }
+    .contact-detail-value { font-size: 15px; color: var(--white); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-field input, .form-field textarea {
+      background: var(--graphite);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--bronze); }
+    .form-field textarea { min-height: 120px; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--bronze);
+      color: #1A1208;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: #cf9a68; }
+
+    /* ─── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--graphite);
+      border-top: 1px solid var(--border);
+      padding: 32px 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-note { font-size: 11px; color: var(--muted); }
+
+    /* ─── SCROLL REVEAL ─────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── MODAL ─────────────────────────────────── */
+    .photo-modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 40px;
+    }
+    .photo-modal.open { display: flex; }
+    .photo-modal img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .photo-modal-close {
+      position: absolute; top: 24px; right: 32px;
+      color: var(--white); font-size: 32px; cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .desc-layout, .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+      .photo-grid .photo-slot:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+      .nav-links { display: none; }
+      .maint-item { grid-template-columns: 80px 1fr; }
+      .maint-km { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="top-nav">
+    <span class="nav-logo">Land Rover <span>Autobiography</span></span>
+    <ul class="nav-links">
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#specs">Specs</a></li>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#maintenance">Entretien</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="speed-lines">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+    <div class="hero-photo">
+      <!-- Remplacer par : <img src="votre-photo.jpg" alt="Range Rover Sport"> -->
+      <div class="hero-photo-placeholder">
+        <svg class="car-silhouette" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70 230 Q75 230 82 215 L130 175 Q150 150 190 138 L260 122 Q330 110 430 108 L560 108 Q650 110 700 130 L760 165 Q800 185 820 215 L825 230 Z" fill="white"/>
+          <ellipse cx="220" cy="235" rx="56" ry="40" fill="white"/>
+          <ellipse cx="690" cy="235" rx="56" ry="40" fill="white"/>
+          <ellipse cx="220" cy="235" rx="34" ry="24" fill="#0b0e12"/>
+          <ellipse cx="690" cy="235" rx="34" ry="24" fill="#0b0e12"/>
+          <path d="M290 135 Q340 112 420 108 L580 108 Q630 112 660 130 L690 155 L270 155 Z" fill="#0b0e12" opacity="0.55"/>
+          <rect x="95" y="212" width="640" height="22" rx="4" fill="white" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="price-tag">
+      <div class="price-label">Prix de vente</div>
+      <div class="price-value">CHF 34'900</div>
+    </div>
+
+    <div class="hero-content">
+      <div class="badge-amg">Stage 1 · 560 CV · Autobiography Dynamic</div>
+      <h1>Sport<br><span>V8 SC</span></h1>
+      <div class="hero-sub">Land Rover · Range Rover Sport · 2014</div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">560</div>
+          <div class="hero-stat-label">Chevaux (CV)</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">700</div>
+          <div class="hero-stat-label">Couple (Nm)</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">5.0</div>
+          <div class="hero-stat-label">V8 Suralimenté</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">120K</div>
+          <div class="hero-stat-label">Kilomètres</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <div class="section-eyebrow">Galerie</div>
+    <h2 class="section-title reveal">En Images</h2>
+    <div class="photo-grid reveal">
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-1">
+        <div class="photo-slot-placeholder">
+          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo principale</span>
+        </div>
+        <span class="photo-count">1 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-2">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Extérieur</span>
+        </div>
+        <span class="photo-count">2 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-3">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Intérieur cuir caramel</span>
+        </div>
+        <span class="photo-count">3 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-4">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 4</span>
+        </div>
+        <span class="photo-count">4 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-5">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 5</span>
+        </div>
+        <span class="photo-count">5 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-6">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 6</span>
+        </div>
+        <span class="photo-count">6 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-7">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 7</span>
+        </div>
+        <span class="photo-count">7 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-8">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 8</span>
+        </div>
+        <span class="photo-count">8 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-9">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 9</span>
+        </div>
+        <span class="photo-count">9 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-10">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 10</span>
+        </div>
+        <span class="photo-count">10 / 10</span>
+      </div>
+
+    </div>
+    <p style="margin-top:16px; font-size:11px; color:var(--muted); letter-spacing:0.15em; text-transform:uppercase;">
+      ↑ Remplacez chaque bloc par votre photo (data-full + src="...")
+    </p>
+  </section>
+
+  <!-- SPECS -->
+  <section id="specs">
+    <div class="section-eyebrow reveal">Fiche Technique</div>
+    <h2 class="section-title reveal">Caractéristiques</h2>
+    <div class="specs-grid reveal">
+      <div class="spec-item highlight">
+        <div class="spec-label">Puissance</div>
+        <div class="spec-value">560 <span class="spec-unit">CV</span></div>
+        <div class="spec-note">Reprogrammation Stage 1</div>
+      </div>
+      <div class="spec-item highlight">
+        <div class="spec-label">Couple</div>
+        <div class="spec-value">700 <span class="spec-unit">Nm</span></div>
+        <div class="spec-note">Gain sensible vs. origine (510 CV / 625 Nm)</div>
+      </div>
+      <div class="spec-item highlight">
+        <div class="spec-label">Échappement</div>
+        <div class="spec-value" style="font-size:20px;">Milltek</div>
+        <div class="spec-note">Non homologué CH — échappement d'origine fourni</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Moteur</div>
+        <div class="spec-value">V8 <span class="spec-unit">5.0L SC</span></div>
+        <div class="spec-note">Suralimenté mécaniquement (compresseur)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Transmission</div>
+        <div class="spec-value">8G <span class="spec-unit">Auto</span></div>
+        <div class="spec-note">Boîte automatique 8 rapports — 4WD</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Suspension</div>
+        <div class="spec-value" style="font-size:20px;">Pneumatique</div>
+        <div class="spec-note">Régulation automatique + Terrain Response 2</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Année</div>
+        <div class="spec-value">2014</div>
+        <div class="spec-note">1ère mise en circulation</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Kilométrage</div>
+        <div class="spec-value">120 000 <span class="spec-unit">km</span></div>
+        <div class="spec-note">Suivi Land Rover Emil Frey</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Couleur</div>
+        <div class="spec-value" style="font-size:20px;">Loire Blue</div>
+        <div class="spec-note">Bleu métallisé profond</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Intérieur</div>
+        <div class="spec-value" style="font-size:20px;">Caramel</div>
+        <div class="spec-note">Cuir Windsor perforé, ambiance Ebony</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Jantes été</div>
+        <div class="spec-value">22 <span class="spec-unit">pouces</span></div>
+        <div class="spec-note">Jeu alu été inclus</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Jantes hiver</div>
+        <div class="spec-value">21 <span class="spec-unit">pouces</span></div>
+        <div class="spec-note">Jeu alu hiver inclus</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Expertise</div>
+        <div class="spec-value" style="font-size:20px;">Mars 2024</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Carrosserie</div>
+        <div class="spec-value">SUV</div>
+        <div class="spec-note">5 portes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section id="description">
+    <div class="section-eyebrow reveal">Le Véhicule</div>
+    <h2 class="section-title reveal">Description</h2>
+    <div class="desc-layout">
+      <div class="desc-text reveal">
+        <p>
+          Ce <strong>Range Rover Sport V8 SC Autobiography Dynamic</strong> incarne le sommet de la gamme Land Rover de la génération L494 : un SUV qui combine la puissance brute d'un V8 suralimenté avec le raffinement le plus poussé de la marque. Finition extérieure <strong>Loire Blue</strong>, un bleu métallisé profond, associée à un intérieur en <strong>cuir Windsor caramel</strong> sur ambiance Ebony.
+        </p>
+        <p>
+          Ce véhicule a bénéficié d'une <strong>reprogrammation Stage 1</strong>, portant la puissance à 560 chevaux et 700 Nm de couple, accompagnée d'un échappement sport <strong>Milltek</strong>. L'échappement d'origine est fourni avec le véhicule pour un retour facile à la configuration homologuée en Suisse si souhaité.
+        </p>
+
+        <div class="highlight-block">
+          <p>"Le V8 5.0 compressé du Range Rover Sport reste l'un des derniers grands moteurs atmosphériques suralimentés avant l'ère du downsizing — un caractère sonore et une poussée linéaire qu'aucun V6 turbo ne réplique."</p>
+        </div>
+
+        <p>
+          Suivi méticuleux par l'agence <strong>Land Rover Emil Frey</strong> et soigné par son dernier propriétaire. Le véhicule a été <strong>expertisé en mars 2024</strong>. Il est vendu avec deux trains de jantes complets : un jeu été en 22 pouces et un jeu hiver en 21 pouces, ainsi que plusieurs éléments décoratifs au look carbone et un tapis de coffre sur mesure.
+        </p>
+      </div>
+      <div class="reveal" style="display:flex; flex-direction:column; gap:24px;">
+        <div class="info-card">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Motorisation</div>
+          <p class="info-card-title">V8 5.0 SC Stage 1</p>
+          <p class="info-card-text">Compresseur mécanique, 560 CV et 700 Nm grâce à la reprogrammation. Échappement Milltek pour une sonorité plus présente — échappement d'origine fourni pour la conformité CH.</p>
+        </div>
+        <div class="info-card dim">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Finition</div>
+          <p class="info-card-title">Autobiography Dynamic</p>
+          <p class="info-card-text">Le niveau de finition le plus complet de la gamme Sport : cuir Windsor perforé, sièges massants, garnissage étendu, et toutes les aides à la conduite de l'époque.</p>
+        </div>
+        <div class="info-card dim">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Suivi</div>
+          <p class="info-card-title">Agence Emil Frey</p>
+          <p class="info-card-text">Entretien régulier auprès du réseau officiel Land Rover. Véhicule soigné, expertisé en mars 2024, deux trains de roues complets fournis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS -->
+  <section id="options">
+    <div class="section-eyebrow reveal">Équipements</div>
+    <h2 class="section-title reveal">Options & Finitions</h2>
+
+    <div class="options-subtitle reveal">Équipement général</div>
+    <div class="options-grid reveal">
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Aide au stationnement</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Assistance changement de voie + indicateur de collisions</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Régulateur de vitesse adaptatif</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Suspension pneumatique et régulation automatique</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Phares bi-xénon adaptatifs et directionnels</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Système caméra surround 360°</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Toit coulissant en verre panoramique</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Vitres teintées</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Volant chauffant</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Compartiment frigorifique console centrale</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Climatisation automatique 4 zones</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Sièges climatisés avant et arrière</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Ouverture et démarrage keyless</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Système de navigation</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Tableau de bord virtuel 12 pouces</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Radio DAB</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Sound System Meridian Signature 1700W</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Système multimédia sièges arrière</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Rails de fixation dans le coffre</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Rétroviseurs rabattables</span></div>
+    </div>
+
+    <div class="options-subtitle reveal">Spécifique Autobiography</div>
+    <div class="options-grid reveal">
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Sellerie cuir « Windsor » perforé</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Sièges électriques chauffants, ventilés, massants (av/ar)</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Réglage électrique de la colonne de direction</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Finitions bois et aluminium, console et portières</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Éclairage d'ambiance configurable</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Tapis de sol spécifiques</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Toit panoramique fixe et ouvrant, vitres surteintées</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Trois zones de climatisation indépendante</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Meridian Signature 825W — 19 haut-parleurs + caisson</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Écran tactile 13.1" — navigation GPS</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Bluetooth, USB, WiFi embarqué, commande vocale</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">CarPlay / Android Auto (selon installation)</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Caméras avant/arrière, vision 360°, radars de stationnement</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Hayon électrique mains-libres</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Chargeur à induction smartphone</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Éclairage LED signature, antibrouillards, lave-phares</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Terrain Response 2, 4WD, boîte auto 8 rapports</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Maintien de voie, freinage d'urgence, angle mort</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Système Isofix sièges arrière</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Alarme périmétrique, verrouillage enfant électrique</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Réfrigérateur console centrale</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Prise domestique, prises 12V, USB rapide</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Accoudoir central arrière, rangements multiples</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Seuils de porte aluminium lumineux « Range Rover »</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Volant chauffant multifonctions</span></div>
+      <div class="option-item"><div class="option-dot"></div><span class="option-name">Jantes alliage exclusives 21" + pneus hiver</span></div>
+    </div>
+  </section>
+
+  <!-- MAINTENANCE -->
+  <section id="maintenance">
+    <div class="section-eyebrow reveal">Historique</div>
+    <h2 class="section-title reveal">Entretien & Suivi</h2>
+    <div class="maintenance-list reveal">
+      <div class="maint-item">
+        <div class="maint-date">2024<span>Mars</span></div>
+        <div class="maint-desc">
+          <strong>Expertise officielle</strong>
+          Véhicule expertisé avec succès. Contrôle complet de l'état général, mécanique et carrosserie.
+        </div>
+        <div class="maint-km">120 000 <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">—</div>
+        <div class="maint-desc">
+          <strong>Reprogrammation Stage 1 + échappement Milltek</strong>
+          Gain de puissance porté à 560 CV / 700 Nm. Échappement sport Milltek installé (non homologué CH). Échappement d'origine conservé et fourni avec le véhicule.
+        </div>
+        <div class="maint-km">— <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">—</div>
+        <div class="maint-desc">
+          <strong>Suivi régulier — Land Rover Emil Frey</strong>
+          Entretiens réalisés au sein du réseau officiel Land Rover. Carnet de suivi disponible sur demande.
+        </div>
+        <div class="maint-km">— <span>km</span></div>
+      </div>
+      <div class="maint-item">
+        <div class="maint-date">—</div>
+        <div class="maint-desc">
+          <strong>Trains de roues complets</strong>
+          Jeu de jantes été en 22 pouces et jeu de jantes hiver en 21 pouces, tous deux fournis avec le véhicule.
+        </div>
+        <div class="maint-km">— <span>km</span></div>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:12px; color:var(--muted);">Dossier d'entretien complet et factures disponibles à la consultation lors de la visite.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <h2>Intéressé<span>?</span></h2>
+        <p style="color:var(--silver); margin-bottom:32px; line-height:1.8;">Essai possible sur rendez-vous. Visite du véhicule en Suisse. Prix ferme, justifié par le suivi complet et les options Autobiography.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Téléphone</span>
+          <span class="contact-detail-value">+41 79 XXX XX XX</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <span class="contact-detail-value">contact@exemple.ch</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Lieu</span>
+          <span class="contact-detail-value">Suisse</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Prix</span>
+          <span class="contact-detail-value" style="font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:var(--accent);">CHF 34'900</span>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-field">
+          <label>Votre nom</label>
+          <input type="text" placeholder="Jean Dupont">
+        </div>
+        <div class="form-field">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+41 79 000 00 00">
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.ch">
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Je souhaite organiser une visite / essai…"></textarea>
+        </div>
+        <button class="btn-primary">Envoyer le message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Land Rover <span style="color:var(--bronze)">Range Rover Sport</span></span>
+    <span class="footer-note">Vente privée · Suisse · 2025</span>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="photo-modal" id="photoModal">
+    <span class="photo-modal-close" id="photoModalClose">✕</span>
+    <img id="photoModalImg" src="" alt="">
+  </div>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Photo modal
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('photoModalImg');
+    document.querySelectorAll('.photo-slot').forEach(slot => {
+      slot.addEventListener('click', () => {
+        const full = slot.getAttribute('data-full');
+        const img = slot.querySelector('img');
+        const src = full && !full.startsWith('REMPLACER') ? full : (img ? img.src : null);
+        if (!src) return;
+        modalImg.src = src;
+        modal.classList.add('open');
+      });
+    });
+    document.getElementById('photoModalClose').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  </script>
+</body>
+</html>
