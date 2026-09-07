@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW 325iXA Touring 1989 — Vétéran — À Vendre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:      #0C0C0B;
+      --graphite:   #141412;
+      --panel:      #1C1C1A;
+      --border:     #2C2C28;
+      --green:      #3A6B3A;
+      --green-dim:  #2A4D2A;
+      --green-bright: #4E8B4E;
+      --silver:     #BABDB8;
+      --white:      #F0EDE8;
+      --muted:      #6B6B66;
+      --accent:     #D4C9A8;
+      --beige:      #C8B98A;
+      --rust:       #8C5A30;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 0 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(12,12,11,0.15) 0%, rgba(12,12,11,0.9) 65%, var(--black) 100%);
+      z-index: 0;
+    }
+
+    /* Grain texture overlay — analogue / vintage feel */
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* Subtle horizontal scan lines — classic car era */
+    .hero-scanlines {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,0,0,0.04) 3px,
+        rgba(0,0,0,0.04) 4px
+      );
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.52;
+      filter: contrast(1.05) saturate(0.75) sepia(0.08);
+    }
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      background: radial-gradient(ellipse at 50% 55%, #1e1e1a 0%, #0c0c0b 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .car-silhouette {
+      width: 78%;
+      max-width: 920px;
+      opacity: 0.15;
+      filter: drop-shadow(0 0 60px rgba(58,107,58,0.2));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 6vw;
+    }
+
+    /* Veteran badge — stitched/aged look */
+    .badge-veteran {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--green-bright);
+      color: var(--green-bright);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+      background: rgba(58,107,58,0.08);
+    }
+    .badge-veteran::before {
+      content: '★';
+      font-size: 9px;
+      color: var(--green-bright);
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(52px, 9vw, 112px);
+      font-weight: 900;
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: var(--green-bright); }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(15px, 2.4vw, 22px);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--silver);
+      text-transform: uppercase;
+      margin-bottom: 52px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 44px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {
+      border-left: 2px solid var(--green-bright);
+      padding-left: 16px;
+    }
+
+    .hero-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-top: 4px;
+    }
+
+    .price-tag {
+      position: absolute;
+      top: 40px;
+      right: 6vw;
+      z-index: 10;
+      text-align: right;
+    }
+    .price-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .price-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(30px, 4vw, 50px);
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    /* ─── NAV ───────────────────────────────────── */
+    .top-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 16px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      background: rgba(12,12,11,0.78);
+      border-bottom: 1px solid rgba(58,107,58,0.2);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-logo span { color: var(--green-bright); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      border: 1px solid var(--green-bright) !important;
+      color: var(--green-bright) !important;
+      padding: 7px 20px;
+      font-size: 11px !important;
+      letter-spacing: 0.2em !important;
+      transition: all 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--green-bright) !important;
+      color: var(--black) !important;
+    }
+
+    /* ─── SECTION SHELL ─────────────────────────── */
+    section { padding: 100px 6vw; }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(34px, 4.5vw, 58px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--white);
+      margin-bottom: 48px;
+    }
+
+    /* ─── VETERAN BANNER ────────────────────────── */
+    .veteran-banner {
+      background: rgba(58,107,58,0.07);
+      border: 1px solid rgba(78,139,78,0.3);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .veteran-banner-star {
+      font-size: 32px;
+      color: var(--green-bright);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .veteran-banner-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .veteran-banner-text span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ─── PHOTOS GRID ───────────────────────────── */
+    #photos { background: var(--graphite); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 6px;
+    }
+    .photo-grid .photo-slot:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .photo-slot {
+      background: var(--panel);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .photo-slot img {
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.3s;
+      filter: saturate(0.8) contrast(1.05);
+    }
+    .photo-slot:hover img {
+      transform: scale(1.04);
+      filter: saturate(1) contrast(1);
+    }
+    .photo-slot-placeholder {
+      width: 100%; height: 100%;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px dashed var(--border);
+    }
+    .photo-slot-placeholder svg { opacity: 0.18; }
+    .photo-slot-placeholder span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .photo-count {
+      position: absolute;
+      bottom: 10px; right: 10px;
+      background: rgba(0,0,0,0.75);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--silver);
+      padding: 3px 9px;
+    }
+
+    /* ─── SPECS TABLE ───────────────────────────── */
+    #specs { background: var(--black); }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .spec-item {
+      background: var(--graphite);
+      padding: 26px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .spec-item:hover { background: var(--panel); }
+
+    .spec-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .spec-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .spec-unit { font-size: 13px; font-weight: 400; color: var(--muted); }
+    .spec-note { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .spec-item.highlight { border-top: 2px solid var(--green-bright); }
+    .spec-item.highlight .spec-value { color: var(--green-bright); }
+    .spec-item.warn { border-top: 2px solid var(--rust); }
+    .spec-item.warn .spec-value { color: var(--beige); font-size: 18px; }
+
+    /* ─── DESCRIPTION ───────────────────────────── */
+    #description { background: var(--graphite); }
+
+    .desc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .desc-text p { color: var(--silver); line-height: 1.85; margin-bottom: 22px; }
+    .desc-text p:last-child { margin-bottom: 0; }
+    .desc-text strong { color: var(--white); font-weight: 600; }
+    .desc-text em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .highlight-block {
+      border-left: 2px solid var(--green-bright);
+      padding: 20px 24px;
+      background: rgba(58,107,58,0.06);
+      margin: 32px 0;
+    }
+    .highlight-block p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 16px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .info-card {
+      background: var(--panel);
+      border-top: 2px solid var(--green-bright);
+      padding: 26px 30px;
+    }
+    .info-card.dim { border-top: 2px solid var(--border); }
+    .info-card.rust-card { border-top: 2px solid var(--rust); }
+    .info-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .info-card-text { color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+    /* ─── RESTORATION ───────────────────────────── */
+    #restauration { background: var(--black); }
+
+    .resto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .resto-item {
+      background: var(--graphite);
+      padding: 32px 32px;
+      border-left: 3px solid transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .resto-item:hover {
+      background: var(--panel);
+      border-left-color: var(--green-bright);
+    }
+
+    .resto-icon {
+      font-size: 24px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .resto-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .resto-text { color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .resto-text strong { color: var(--silver); font-weight: 600; }
+
+    .resto-cost {
+      margin-top: 56px;
+      background: rgba(58,107,58,0.06);
+      border: 1px solid rgba(78,139,78,0.25);
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .resto-cost-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .resto-cost-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--green-bright);
+      line-height: 1;
+    }
+    .resto-cost-note {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    /* ─── OPTIONS LIST ───────────────────────────── */
+    #options { background: var(--graphite); }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .option-item {
+      background: var(--panel);
+      padding: 18px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: background 0.15s;
+    }
+    .option-item:hover { background: #22221e; }
+
+    .option-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green-bright);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .option-dot.rare { background: var(--beige); }
+
+    .option-content {}
+    .option-name { font-size: 14px; font-weight: 500; color: var(--silver); }
+    .option-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--beige);
+      border: 1px solid rgba(200,185,138,0.35);
+      padding: 2px 7px;
+      margin-left: 8px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+
+    /* ─── CONTACT ───────────────────────────────── */
+    #contact { background: var(--black); border-top: 1px solid var(--border); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 32px;
+    }
+    .contact-info h2 span { color: var(--green-bright); }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--silver);
+    }
+    .contact-detail:first-of-type { border-top: 1px solid var(--border); }
+    .contact-detail-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 80px;
+      flex-shrink: 0;
+    }
+    .contact-detail-value { font-size: 15px; color: var(--white); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .form-field input, .form-field textarea {
+      background: var(--graphite);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--green-bright); }
+    .form-field textarea { min-height: 110px; }
+
+    .btn-primary {
+      display: inline-block;
+      border: 1px solid var(--green-bright);
+      background: transparent;
+      color: var(--green-bright);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      cursor: pointer;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover {
+      background: var(--green-bright);
+      color: var(--black);
+    }
+
+    /* ─── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--graphite);
+      border-top: 1px solid var(--border);
+      padding: 32px 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .footer-note { font-size: 11px; color: var(--muted); }
+
+    /* ─── SCROLL REVEAL ─────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── MODAL ─────────────────────────────────── */
+    .photo-modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.94);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 40px;
+    }
+    .photo-modal.open { display: flex; }
+    .photo-modal img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .photo-modal-close {
+      position: absolute; top: 24px; right: 32px;
+      color: var(--white); font-size: 32px; cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 768px) {
+      .desc-layout, .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+      .photo-grid .photo-slot:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+      .nav-links { display: none; }
+      .resto-cost { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="top-nav">
+    <span class="nav-logo">BMW <span>E30 · Vétéran</span></span>
+    <ul class="nav-links">
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#specs">Specs</a></li>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#restauration">Restauration</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-scanlines"></div>
+    <div class="hero-photo">
+      <!-- Remplacer par : <img src="votre-photo.jpg" alt="BMW 325iXA Touring"> -->
+      <div class="hero-photo-placeholder">
+        <!-- Touring / estate silhouette -->
+        <svg class="car-silhouette" viewBox="0 0 920 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M75 220 Q80 220 88 205 L140 165 Q175 140 220 128 L310 112 Q380 105 460 104 L600 104 Q680 106 730 130 L790 170 Q820 190 835 210 L840 220 Z" fill="white"/>
+          <!-- Roof line — longer for touring/estate -->
+          <path d="M210 128 Q265 100 340 95 L620 92 Q690 94 720 112 L760 140 L200 140 Z" fill="white" opacity="0.55"/>
+          <!-- Rear vertical — estate / break line -->
+          <line x1="760" y1="92" x2="760" y2="140" stroke="white" stroke-width="4" opacity="0.4"/>
+          <ellipse cx="230" cy="226" rx="50" ry="38" fill="white"/>
+          <ellipse cx="710" cy="226" rx="50" ry="38" fill="white"/>
+          <ellipse cx="230" cy="226" rx="30" ry="22" fill="#0c0c0b"/>
+          <ellipse cx="710" cy="226" rx="30" ry="22" fill="#0c0c0b"/>
+          <rect x="95" y="208" width="655" height="18" rx="4" fill="white" opacity="0.25"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="price-tag">
+      <div class="price-label">Prix de vente</div>
+      <div class="price-value">CHF 18'500</div>
+    </div>
+
+    <div class="hero-content">
+      <div class="badge-veteran">Statut Vétéran · Expertisée le 19.09.2025 · 3 ans de restauration</div>
+      <h1>325i<span>XA</span><br>Touring</h1>
+      <div class="hero-sub">BMW · E30 · 1989 · 4×4 · Automatique</div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">170</div>
+          <div class="hero-stat-label">Chevaux (CV)</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">2.5</div>
+          <div class="hero-stat-label">L 6 cyl. en ligne</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">4×4</div>
+          <div class="hero-stat-label">Transmission intégrale</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-val">1989</div>
+          <div class="hero-stat-label">Millésime</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <div class="section-eyebrow">Galerie</div>
+    <h2 class="section-title reveal">En Images</h2>
+    <div class="photo-grid reveal">
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-1">
+        <div class="photo-slot-placeholder">
+          <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo principale</span>
+        </div>
+        <span class="photo-count">1 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-2">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Extérieur</span>
+        </div>
+        <span class="photo-count">2 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-3">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Intérieur</span>
+        </div>
+        <span class="photo-count">3 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-4">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 4</span>
+        </div>
+        <span class="photo-count">4 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-5">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 5</span>
+        </div>
+        <span class="photo-count">5 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-6">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 6</span>
+        </div>
+        <span class="photo-count">6 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-7">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Moteur</span>
+        </div>
+        <span class="photo-count">7 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-8">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 8</span>
+        </div>
+        <span class="photo-count">8 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-9">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 9</span>
+        </div>
+        <span class="photo-count">9 / 10</span>
+      </div>
+
+      <div class="photo-slot" data-full="REMPLACER-URL-PHOTO-10">
+        <div class="photo-slot-placeholder">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/></svg>
+          <span>Photo 10</span>
+        </div>
+        <span class="photo-count">10 / 10</span>
+      </div>
+
+    </div>
+    <p style="margin-top:14px; font-size:11px; color:var(--muted); letter-spacing:0.15em; text-transform:uppercase;">
+      ↑ Remplacez les zones par vos photos (data-full + src="...")
+    </p>
+  </section>
+
+  <!-- SPECS -->
+  <section id="specs">
+    <div class="section-eyebrow reveal">Fiche Technique</div>
+    <h2 class="section-title reveal">Caractéristiques</h2>
+    <div class="specs-grid reveal">
+      <div class="spec-item highlight">
+        <div class="spec-label">Moteur</div>
+        <div class="spec-value">M20 <span class="spec-unit">B25</span></div>
+        <div class="spec-note">6 cylindres en ligne — 2 494 cm³</div>
+      </div>
+      <div class="spec-item highlight">
+        <div class="spec-label">Puissance</div>
+        <div class="spec-value">170 <span class="spec-unit">CV</span></div>
+        <div class="spec-note">125 kW à 5 800 tr/min</div>
+      </div>
+      <div class="spec-item highlight">
+        <div class="spec-label">Statut</div>
+        <div class="spec-value" style="font-size:22px; color: var(--green-bright);">Vétéran</div>
+        <div class="spec-note">Expertise officielle — 19 septembre 2025</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Transmission</div>
+        <div class="spec-value" style="font-size:20px;">4HP22</div>
+        <div class="spec-note">Boîte auto 4 rapports + mode Sport — 4×4 iX</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Carrosserie</div>
+        <div class="spec-value">Touring</div>
+        <div class="spec-note">Break 5 portes — E30</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Année</div>
+        <div class="spec-value">1989</div>
+        <div class="spec-note">Dernière génération E30</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Kilométrage</div>
+        <div class="spec-value">~270 000 <span class="spec-unit">km</span></div>
+        <div class="spec-note">Moteur intégralement révisé</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Restauration</div>
+        <div class="spec-value" style="font-size:20px;">3 ans</div>
+        <div class="spec-note">CHF 14'000 de pièces</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Jantes été</div>
+        <div class="spec-value">BBS <span class="spec-unit">15"</span></div>
+        <div class="spec-note">Pneus neufs — septembre 2025</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Jantes hiver</div>
+        <div class="spec-value">BBS <span class="spec-unit">14"</span></div>
+        <div class="spec-note">Pneus neufs oct. 2025 — non homologuées vétéran</div>
+      </div>
+      <div class="spec-item warn">
+        <div class="spec-label">Climatisation</div>
+        <div class="spec-value">Non active</div>
+        <div class="spec-note">Kit de conversion gaz nécessaire (~CHF 1'500)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Intérieur</div>
+        <div class="spec-value" style="font-size:20px;">Cuir beige</div>
+        <div class="spec-note">Sièges sport avant + appuie-tête arrière</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section id="description">
+    <div class="section-eyebrow reveal">Le Véhicule</div>
+    <h2 class="section-title reveal">Description</h2>
+
+    <div class="veteran-banner reveal">
+      <span class="veteran-banner-star">★</span>
+      <div class="veteran-banner-text">
+        <strong>Statut Vétéran officiel — 19 septembre 2025</strong>
+        <span>Expertisée après 3 ans de restauration complète. Un collector BMW E30 prêt à rouler, immatriculé et conforme.</span>
+      </div>
+    </div>
+
+    <div class="desc-layout">
+      <div class="desc-text reveal">
+        <p>
+          La <strong>BMW 325iXA Touring</strong> est l'une des raretés absolues de la génération E30 : le break cinq portes avec <strong>transmission intégrale iX</strong> et boîte automatique à mode Sport. Produite en très petite série entre 1987 et 1991, cette combinaison n'existe que sur quelques milliers d'exemplaires dans le monde entier.
+        </p>
+        <p>
+          Cet exemplaire sort de <strong>trois années de restauration méthodique</strong> — une remise à neuf intégrale conduite pièce par pièce, organe par organe. La carrosserie a été entièrement démontée pour traiter toutes les zones de rouille à la source. Elle conserve sa <em>patine d'origine</em>, ses cicatrices de vie, sans reprise de peinture artificielle : c'est l'authenticité d'un vrai collector, pas d'une voiture reconstituée.
+        </p>
+        <div class="highlight-block">
+          <p>"Une 325iXA Touring automatique de 1989 en état vétéran et restaurée à ce niveau n'est plus une voiture ordinaire — c'est un objet de collection qui roule, qui sonne juste, et qui ne demande qu'à être conduit."</p>
+        </div>
+        <p>
+          Le <strong>six cylindres M20 B25</strong> a été entièrement démonté, contrôlé et remonté avec tous les joints neufs, les durites d'eau, la courroie de distribution, la pompe à eau et les injecteurs révisés. La boîte <strong>4HP22</strong> a reçu un grand service complet. Les deux trains roulants ont été intégralement refaits. Une voiture qui repart de zéro mécaniquement, avec le charme et le statut vétéran en prime.
+        </p>
+      </div>
+      <div class="reveal" style="display:flex; flex-direction:column; gap:20px;">
+        <div class="info-card">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Rareté</div>
+          <p class="info-card-title">iX Touring Auto</p>
+          <p class="info-card-text">La combinaison Touring + 4×4 iX + boîte automatique est une raréfaction dans la raréfaction. La version E30 Touring n'est sortie qu'en 1987-1991, l'iX auto Touring en nombre très limité.</p>
+        </div>
+        <div class="info-card dim">
+          <div class="section-eyebrow" style="margin-bottom:8px;">Patine & Authenticité</div>
+          <p class="info-card-title">Non repeinte</p>
+          <p class="info-card-text">La carrosserie n'a pas été repeinte ni débosselée. Les endroits rouillés ont été traités en profondeur, mais la peinture d'origine et sa patine sont conservées — un choix de collector assumé.</p>
+        </div>
+        <div class="info-card rust-card">
+          <div class="section-eyebrow" style="margin-bottom:8px; color: var(--rust);">Point d'attention</div>
+          <p class="info-card-title">Climatisation</p>
+          <p class="info-card-text">Présente mais non fonctionnelle faute de gaz compatible. Un kit de conversion est nécessaire (environ CHF 1'500), ce qui est reflété dans le prix de vente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS -->
+  <section id="options">
+    <div class="section-eyebrow reveal">Équipements</div>
+    <h2 class="section-title reveal">Options d'époque</h2>
+    <div class="options-grid reveal">
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Vitres électriques 4 portes (avant et arrière)</span>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot rare"></div>
+        <div class="option-content">
+          <span class="option-name">Intérieur cuir beige — sièges sport avant<span class="option-badge">Rare</span></span>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">Appuie-tête arrière cuir — option peu répandue sur E30</div>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Ordinateur de bord</span>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Volant sport M-Technik 2</span>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot rare"></div>
+        <div class="option-content">
+          <span class="option-name">Rétroviseur intérieur M-Technik avec lampes de lecture<span class="option-badge">Option M3</span></span>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">Rétroviseur spécifique à la M3, monté sur cet exemplaire</div>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Jantes BBS 15" — pneus été neufs (sept. 2025)</span>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Jantes BBS 14" — pneus hiver neufs (oct. 2025)</span>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">Non homologuées pour le statut vétéran</div>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Climatisation (non active — kit conversion gaz ~CHF 1'500)</span>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot rare"></div>
+        <div class="option-content">
+          <span class="option-name">Régulateur de vitesse<span class="option-badge">Très rare</span></span>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">Option particulièrement peu répandue sur l'E30</div>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Autoradio Blaupunkt Bremen SQR 46 DAB</span>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">Esthétique d'origine — DAB+, Bluetooth, kit mains libres</div>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Boîte automatique 4HP22 avec mode Sport</span>
+        </div>
+      </div>
+
+      <div class="option-item">
+        <div class="option-dot"></div>
+        <div class="option-content">
+          <span class="option-name">Transmission intégrale BMW iX</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESTAURATION -->
+  <section id="restauration">
+    <div class="section-eyebrow reveal">3 ans de travail</div>
+    <h2 class="section-title reveal">Restauration Complète</h2>
+
+    <div class="resto-grid reveal">
+
+      <div class="resto-item">
+        <span class="resto-icon">🔧</span>
+        <div class="resto-title">Moteur M20 B25</div>
+        <div class="resto-text">
+          Moteur intégralement <strong>démonté, contrôlé et remonté</strong>. Tous les joints remplacés. Durites d'eau neuves. <strong>Courroie de distribution</strong> et pompe à eau remplacées. Injecteurs révisés. Filtre à air sport monté. Liquide de refroidissement à vie <strong>Amstuz Orol sans eau</strong>. Nouveau support moteur.
+        </div>
+      </div>
+
+      <div class="resto-item">
+        <span class="resto-icon">⚙️</span>
+        <div class="resto-title">Boîte 4HP22</div>
+        <div class="resto-text">
+          Grand service complet de la boîte automatique : <strong>vidange</strong>, remplacement du filtre interne, <strong>remplacement des conduites haute pression</strong>. Apprentissage et vérification des passages de rapport.
+        </div>
+      </div>
+
+      <div class="resto-item">
+        <span class="resto-icon">🚗</span>
+        <div class="resto-title">Train avant</div>
+        <div class="resto-text">
+          Refait intégralement : changement des <strong>joints, simmerings, vidange</strong>, amortisseurs neufs, roulements de roues, <strong>freins complets</strong> incluant les conduites de frein.
+        </div>
+      </div>
+
+      <div class="resto-item">
+        <span class="resto-icon">🛞</span>
+        <div class="resto-title">Train arrière</div>
+        <div class="resto-text">
+          Refait en totalité : <strong>tous les silent-blocs</strong> remplacés, simmerings, amortisseurs neufs, roulements de roues, <strong>freins complets</strong> avec tambours et garnitures.
+        </div>
+      </div>
+
+      <div class="resto-item">
+        <span class="resto-icon">🏠</span>
+        <div class="resto-title">Carrosserie</div>
+        <div class="resto-text">
+          Voiture <strong>intégralement démontée</strong> pour traiter tous les endroits rouillés à la source. Non repeinte et non débosselée par choix : la <strong>patine et les marques de vie d'origine</strong> sont conservées — authenticité de collector garantie.
+        </div>
+      </div>
+
+      <div class="resto-item">
+        <span class="resto-icon">⛽</span>
+        <div class="resto-title">Circuit carburant</div>
+        <div class="resto-text">
+          Réservoir d'essence <strong>révisé</strong>. Remplacement du filtre à carburant et des <strong>conduites d'alimentation</strong>. Circuit propre et étanche.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="resto-cost reveal">
+      <div>
+        <div class="resto-cost-label">Investissement en pièces</div>
+        <div class="resto-cost-value">CHF 14'000</div>
+      </div>
+      <div class="resto-cost-note">
+        Ce montant représente uniquement le coût des pièces et matériaux, sans compter les centaines d'heures de travail. Une restauration de cette ampleur sur un E30 iX Touring automatique constitue une valeur ajoutée significative et durable pour l'acquéreur.
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <h2>Intéressé<span>?</span></h2>
+        <p style="color:var(--silver); margin-bottom:32px; line-height:1.8;">Essai sur rendez-vous. Visite du véhicule en Suisse. Une restauration rare pour un modèle rare — le prix tient compte de l'état de la climatisation non active.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Téléphone</span>
+          <span class="contact-detail-value">+41 79 XXX XX XX</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <span class="contact-detail-value">contact@exemple.ch</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Lieu</span>
+          <span class="contact-detail-value">Suisse</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Prix</span>
+          <span class="contact-detail-value" style="font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:var(--accent);">CHF 18'500</span>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-field">
+          <label>Votre nom</label>
+          <input type="text" placeholder="Jean Dupont">
+        </div>
+        <div class="form-field">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+41 79 000 00 00">
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.ch">
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Je souhaite organiser une visite / essai…"></textarea>
+        </div>
+        <button class="btn-primary">Envoyer le message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">BMW <span style="color:var(--green-bright)">E30 · 325iXA Touring · 1989</span></span>
+    <span class="footer-note">Vente privée · Vétéran · Suisse · 2025</span>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="photo-modal" id="photoModal">
+    <span class="photo-modal-close" id="photoModalClose">✕</span>
+    <img id="photoModalImg" src="" alt="">
+  </div>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Photo modal
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('photoModalImg');
+    document.querySelectorAll('.photo-slot').forEach(slot => {
+      slot.addEventListener('click', () => {
+        const full = slot.getAttribute('data-full');
+        const img = slot.querySelector('img');
+        const src = full && !full.startsWith('REMPLACER') ? full : (img ? img.src : null);
+        if (!src) return;
+        modalImg.src = src;
+        modal.classList.add('open');
+      });
+    });
+    document.getElementById('photoModalClose').addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  </script>
+</body>
+</html>
